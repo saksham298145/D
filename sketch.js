@@ -95,9 +95,9 @@ function Collision(index){
 
         if (collision2.collided) {
           gameOver()  
-        var removed=enemies.splice()
+sound.stop()
         }
-        
+
       }
     }
   }
