@@ -91,6 +91,13 @@ function Collision(index){
         Matter.World.remove(world, explosions[index].body);
         delete explosions[index];
         score=score+5
+        var collision2 = Matter.SAT.collides(tank,enemies[i].body);
+
+        if (collision2.collided) {
+          gameOver()  
+        var removed=enemies.splice()
+        }
+        
       }
     }
   }
@@ -106,6 +113,7 @@ function Collision(index){
 function keyPressed() {
   if (keyCode === 32) {
  
+    
 
       var explosion = new Explosion(mg.x,mg.y);
 
@@ -132,12 +140,7 @@ function keyPressed() {
         if (enemies[i]) {
           Matter.Body.setVelocity(enemies[i].body,{x:-0.9 ,y:-0.3});
           enemies[i].display();
-          var collision2 = Matter.SAT.collides(tank,enemies[i].body);
-
-          if (collision2.collided) {
-            gameOver()  
-          var removed=enemies.splice()
-          }
+         
             
         } else {
           enemies[i];
